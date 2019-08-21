@@ -1,12 +1,17 @@
-import java.lang.reflect.Array;
 import java.util.HashMap;
 import java.util.Map;
 
 public class Main {
 
-    private static String acetate = "C2H3O2^-1";
+    private static final String acetateFormula = "C2H3O2^-1";
+    private static final String carbonateFormula = "CO3^-2";
+    private static final String hyCarbFormula = "HCO3^-1";
+    private static final String hydroxide = "OH^-1";
+    private static final String nitrite = "NO2^-1";
+    private static final String nitrate = "NO3^-1";
 
     private static Map<String, String> ions = new HashMap<>();
+
     private  static String[] names = new String[]{
             "acetate",
             "carbonate",
@@ -15,13 +20,13 @@ public class Main {
             "nitrite",
             "nitrate"
     };
-    private static String[] bonds = new String[]{
-            acetate,
-            "CO<sub>3</sub><sup>-2</sup>",
-            "HCO<sub>3</sub><sup>-1</sup>",
-            "OH<sup>-1</sup>",
-            "NO<sub>2</sub><sup>-1</sup>",
-            "NO<sub>3</sub><sup>-1</sup>"
+    private static String[] formulas = new String[]{
+            acetateFormula,
+            carbonateFormula,
+            hyCarbFormula,
+            hydroxide,
+            nitrite,
+            nitrate
     };
 
     public static void main(String[] args) {
@@ -36,7 +41,7 @@ public class Main {
 
     private static void fillMap() {
         for (int i = 0; i < names.length; i++) {
-            ions.put(names[i], bonds[i]);
+            ions.put(names[i], formulas[i]);
         }
     }
 }
